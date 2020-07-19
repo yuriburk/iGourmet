@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ItemsCarousel from 'react-items-carousel';
 
 import {
   Container,
@@ -14,11 +15,19 @@ interface ICategories {
 }
 
 const Categories: React.FC<ICategories> = ({ categories }) => {
+  const [activeItemIndex, setActiveItemIndex] = useState(0);
+
   return (
     <Container>
       <Title>Categorias</Title>
 
-      <CategoriesList>
+      <ItemsCarousel
+        numberOfCards={3}
+        gutter={20}
+        outsideChevron
+        requestToChangeActive={setActiveItemIndex}
+        activeItemIndex={activeItemIndex}
+      >
         {categories.map((category: any, index: number) => (
           <CategoryItem key={index}>
             <CategoryImage src={category.img} alt={category.name} />
@@ -26,7 +35,7 @@ const Categories: React.FC<ICategories> = ({ categories }) => {
             <CategoryTitle>{category.name}</CategoryTitle>
           </CategoryItem>
         ))}
-      </CategoriesList>
+      </ItemsCarousel>
     </Container>
   );
 };

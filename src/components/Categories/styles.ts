@@ -19,7 +19,6 @@ export const CategoryItem = styled.div`
   flex-direction: column;
   align-items: center;
 
-  margin-right: 22px;
   height: 180px;
   padding: 14px;
   border-radius: 50px;
