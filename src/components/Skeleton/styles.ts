@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
-export const SkeletonThemeContainer = styled(SkeletonTheme).attrs((props) => ({
-  color: props.theme.colors.secundaryDark,
+export const SkeletonThemeContainer = styled(SkeletonTheme).attrs(props => ({
+  color: props.theme.colors.primaryGray,
   highlightColor: props.theme.colors.primaryDark,
 }))``;
 

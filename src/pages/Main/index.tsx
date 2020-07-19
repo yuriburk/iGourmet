@@ -2,8 +2,28 @@ import React from 'react';
 import { FiMenu, FiSearch } from 'react-icons/fi';
 
 import Header from 'components/Header';
-import SearchBox from 'components/SearchBox';
+import Promotion from 'components/Promotion';
 import { Container } from './styles';
+import Categories from 'components/Categories';
+
+const categories = [
+  {
+    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
+    name: 'Pizza',
+  },
+  {
+    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
+    name: 'Pizza',
+  },
+  {
+    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
+    name: 'Pizza',
+  },
+  {
+    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
+    name: 'Pizza',
+  },
+];
 
 const Main: React.FC = () => (
   <Container>
@@ -12,8 +32,8 @@ const Main: React.FC = () => (
       title="iGourmet"
       rightComponent={<FiSearch />}
     />
-
-    <SearchBox onChange={event => console.log(event.target.value)} />
+    <Promotion />
+    <Categories categories={categories} />
   </Container>
 );
 

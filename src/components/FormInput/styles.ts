@@ -24,14 +24,14 @@ export const InputContainer = styled.div<IInputContainerProps>`
   border-radius: 10px;
   padding: 14px;
   border: 2px solid #232129;
-  color: ${(props) =>
+  color: ${props =>
     props.isFocused || props.isFilled ? '#78c850' : '#666360'};
-  ${(props) =>
+  ${props =>
     props.isErrored &&
     css`
       border-color: #c53030;
     `}
-  ${(props) =>
+  ${props =>
     props.isFocused &&
     css`
       border-color: #78c850;
