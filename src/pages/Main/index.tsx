@@ -23,6 +23,30 @@ const categories = [
     img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
     name: 'Pizza',
   },
+  {
+    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
+    name: 'Pizza',
+  },
+  {
+    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
+    name: 'Pizza',
+  },
+  {
+    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
+    name: 'Pizza',
+  },
+  {
+    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
+    name: 'Pizza',
+  },
+  {
+    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
+    name: 'Pizza',
+  },
+  {
+    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
+    name: 'Pizza',
+  },
 ];
 
 const Main: React.FC = () => (
