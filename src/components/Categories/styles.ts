@@ -1,7 +1,11 @@
 import styled from 'styled-components';
-import ItemsCarousel from 'react-items-carousel';
+import Slider from 'react-slick';
 
 export const Container = styled.div``;
+
+export const Test = styled.div`
+  background-color: red;
+`;
 
 export const Title = styled.h1`
   font-size: 24px;
@@ -9,9 +13,42 @@ export const Title = styled.h1`
   margin-bottom: 8px;
 `;
 
-export const CategoryCarousel = styled(ItemsCarousel).attrs(() => ({
-  gutter: 20,
-  outsideChevron: true,
+export const CategoryCarousel = styled(Slider).attrs(() => ({
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 8,
+  slidesToScroll: 8,
+  responsive: [
+    {
+      breakpoint: 1250,
+      settings: {
+        slidesToShow: 8,
+        slidesToScroll: 8,
+      },
+    },
+    {
+      breakpoint: 1050,
+      settings: {
+        slidesToShow: 6,
+        slidesToScroll: 6,
+      },
+    },
+    {
+      breakpoint: 880,
+      settings: {
+        slidesToShow: 5,
+        slidesToScroll: 5,
+      },
+    },
+    {
+      breakpoint: 675,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+      },
+    },
+  ],
 }))``;
 
 export const CategoryItem = styled.div`
@@ -25,11 +62,6 @@ export const CategoryItem = styled.div`
   padding: 14px;
   border-radius: 58px;
   background-color: ${props => props.theme.colors.primaryYellow};
-
-  ${props => props.theme.breakpoints.md} {
-    height: 148px;
-    max-width: 90px;
-  }
 `;
 
 export const CategoryImage = styled.img`
@@ -38,10 +70,6 @@ export const CategoryImage = styled.img`
   height: 74px;
   padding: 8px;
   background-color: ${props => props.theme.colors.primaryWhite};
-
-  ${props => props.theme.breakpoints.md} {
-    height: 54px;
-  }
 `;
 
 export const CategoryTitle = styled.h2`
