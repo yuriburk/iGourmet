@@ -3,10 +3,6 @@ import Slider from 'react-slick';
 
 export const Container = styled.div``;
 
-export const Test = styled.div`
-  background-color: red;
-`;
-
 export const Title = styled.h1`
   font-size: 24px;
   color: ${props => props.theme.colors.primaryDark};
