@@ -51,20 +51,22 @@ const categories = [
 ];
 
 const Main: React.FC = () => {
-  const [isEnabled, setIsEnabled] = useState(false);
+  const [isMenuEnabled, setIsMenuEnabled] = useState(false);
 
   return (
     <Container>
       <Header
-        leftComponent={<FiMenu onClick={() => setIsEnabled(!isEnabled)} />}
+        leftComponent={
+          <FiMenu onClick={() => setIsMenuEnabled(!isMenuEnabled)} />
+        }
         title="iGourmet"
         rightComponent={<FiSearch />}
       />
       <Promotion />
       <Categories categories={categories} />
       <SideBarMenu
-        outIsEnabled={isEnabled}
-        functionSetIsEnabled={setIsEnabled}
+        isEnabled={isMenuEnabled}
+        handleSetIsEnabled={setIsMenuEnabled}
       />
     </Container>
   );

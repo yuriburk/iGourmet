@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { FiMenu, FiHelpCircle } from 'react-icons/fi';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
@@ -34,33 +34,24 @@ const items = [
 ];
 
 interface IControl {
-  outIsEnabled: boolean;
-  functionSetIsEnabled: any;
+  isEnabled: boolean;
+  handleSetIsEnabled: any;
 }
 
 const SideBarMenu: React.FC<IControl> = ({
-  outIsEnabled = false,
-  functionSetIsEnabled,
+  isEnabled = false,
+  handleSetIsEnabled,
 }) => {
-  const [isEnabled, setIsEnabled] = useState(outIsEnabled);
-
-  const exitMenu = () => {
-    setIsEnabled(false);
-    functionSetIsEnabled(false);
+  const handleExitMenu = () => {
+    handleSetIsEnabled(false);
   };
-
-  useEffect(() => {
-    if (isEnabled !== outIsEnabled) {
-      setIsEnabled(outIsEnabled);
-    }
-  }, [outIsEnabled]);
 
   return (
     <Container isEnabled={isEnabled}>
       <MenuContainer isEnabled={isEnabled}>
         <MenuHeader>
           <MenuTitle>Menu</MenuTitle>
-          <MenuIcon onClick={() => exitMenu()}>
+          <MenuIcon onClick={() => handleExitMenu()}>
             <FiMenu />
           </MenuIcon>
         </MenuHeader>
