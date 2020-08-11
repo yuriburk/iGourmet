@@ -6,5 +6,5 @@ export const colors = {
   primaryYellow: '#fbd560',
   primaryPurple: '#503e9d',
   secundaryGray: '#ababab',
-  secundaryYellow: '#fef7ec',
+  secundaryYellow: '#fce7c7',
 };

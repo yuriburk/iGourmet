@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FiMenu, FiSearch } from 'react-icons/fi';
 
 import Header from 'components/Header';
 import Promotion from 'components/Promotion';
-import { Container } from './styles';
 import Categories from 'components/Categories';
+import SideBarMenu from 'components/SideBarMenu';
+import { Container } from './styles';
 
 const categories = [
   {
@@ -49,16 +50,24 @@ const categories = [
   },
 ];
 
-const Main: React.FC = () => (
-  <Container>
-    <Header
-      leftComponent={<FiMenu />}
-      title="iGourmet"
-      rightComponent={<FiSearch />}
-    />
-    <Promotion />
-    <Categories categories={categories} />
-  </Container>
-);
+const Main: React.FC = () => {
+  const [isEnabled, setIsEnabled] = useState(false);
+
+  return (
+    <Container>
+      <Header
+        leftComponent={<FiMenu onClick={() => setIsEnabled(!isEnabled)} />}
+        title="iGourmet"
+        rightComponent={<FiSearch />}
+      />
+      <Promotion />
+      <Categories categories={categories} />
+      <SideBarMenu
+        outIsEnabled={isEnabled}
+        functionSetIsEnabled={setIsEnabled}
+      />
+    </Container>
+  );
+};
 
 export default Main;
