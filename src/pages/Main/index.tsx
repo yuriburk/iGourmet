@@ -57,7 +57,7 @@ const Main: React.FC = () => {
     <Container>
       <Header
         leftComponent={
-          <FiMenu onClick={() => setIsMenuEnabled(!isMenuEnabled)} />
+          <FiMenu onClick={() => setIsMenuEnabled(state => !state)} />
         }
         title="iGourmet"
         rightComponent={<FiSearch />}

@@ -38,10 +38,7 @@ interface IControl {
   handleSetIsEnabled: any;
 }
 
-const SideBarMenu: React.FC<IControl> = ({
-  isEnabled = false,
-  handleSetIsEnabled,
-}) => {
+const SideBarMenu: React.FC<IControl> = ({ isEnabled, handleSetIsEnabled }) => {
   const handleExitMenu = () => {
     handleSetIsEnabled(false);
   };
@@ -51,7 +48,7 @@ const SideBarMenu: React.FC<IControl> = ({
       <MenuContainer isEnabled={isEnabled}>
         <MenuHeader>
           <MenuTitle>Menu</MenuTitle>
-          <MenuIcon onClick={() => handleExitMenu()}>
+          <MenuIcon onClick={handleExitMenu}>
             <FiMenu />
           </MenuIcon>
         </MenuHeader>
