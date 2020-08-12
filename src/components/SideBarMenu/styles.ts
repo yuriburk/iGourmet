@@ -1,10 +1,7 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
+import { animated } from 'react-spring';
 
-interface IControl {
-  isEnabled?: boolean;
-}
-
-export const Container = styled.div<IControl>`
+export const Container = styled(animated.div)`
   position: absolute;
   width: 100vw;
   height: 100vh;
@@ -14,20 +11,9 @@ export const Container = styled.div<IControl>`
   top: 0;
   right: 0;
   bottom: 0;
-
-  ${props =>
-    props.isEnabled &&
-    css`
-      visibility: visible;
-    `}
-  ${props =>
-    !props.isEnabled &&
-    css`
-      visibility: hidden;
-    `}
 `;
 
-export const OverlayContainer = styled.div<IControl>`
+export const OverlayContainer = styled(animated.div)`
   position: absolute;
   background-color: rgba(0, 0, 0, 0.2);
   width: 100vw;
@@ -38,17 +24,13 @@ export const OverlayContainer = styled.div<IControl>`
   top: 0;
   right: 0;
   bottom: 0;
-  backdrop-filter: blur(1px);
 `;
 
-export const MenuContainer = styled.div<IControl>`
+export const MenuContainer = styled(animated.div)`
   position: fixed;
   background-color: ${props => props.theme.colors.primaryWhite};
   height: 100vh;
   width: 250px;
-  transition: transform 0.2s ease;
-  transform: ${props =>
-    !props.isEnabled ? 'translateX(-250px)' : 'translateX(0)'};
   z-index: 2;
 `;
 

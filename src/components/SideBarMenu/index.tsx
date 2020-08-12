@@ -3,6 +3,7 @@ import { FiMenu, FiHelpCircle } from 'react-icons/fi';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
+import { useSpring } from 'react-spring';
 
 import {
   Container,
@@ -42,14 +43,29 @@ interface IControl {
 }
 
 const SideBarMenu: React.FC<IControl> = ({ isEnabled, handleSetIsEnabled }) => {
+  const menuContainerProps = useSpring({
+    width: isEnabled ? 250 : 0,
+  });
+  const containerProps = useSpring({
+    opacity: isEnabled ? 1 : 0,
+    config: { duration: 250 },
+  });
+
   const handleExitMenu = () => {
     handleSetIsEnabled(false);
   };
 
   return (
-    <Container isEnabled={isEnabled}>
+    <Container
+      style={{
+        ...containerProps,
+        visibility: containerProps.opacity.interpolate(o =>
+          o === 0 ? 'hidden' : 'visible',
+        ),
+      }}
+    >
       <OverlayContainer onClick={handleExitMenu} />
-      <MenuContainer isEnabled={isEnabled}>
+      <MenuContainer style={menuContainerProps}>
         <MenuHeader>
           <MenuTitle>Menu</MenuTitle>
           <MenuIcon onClick={handleExitMenu}>
