@@ -6,12 +6,15 @@ import { BsPerson } from 'react-icons/bs';
 
 import {
   Container,
+  OverlayContainer,
   MenuContainer,
   MenuHeader,
   MenuTitle,
   MenuIcon,
   Item,
   Icon,
+  ItemTitleContainer,
+  ItemTitle,
 } from './styles';
 
 const items = [
@@ -45,6 +48,7 @@ const SideBarMenu: React.FC<IControl> = ({ isEnabled, handleSetIsEnabled }) => {
 
   return (
     <Container isEnabled={isEnabled}>
+      <OverlayContainer onClick={handleExitMenu} />
       <MenuContainer isEnabled={isEnabled}>
         <MenuHeader>
           <MenuTitle>Menu</MenuTitle>
@@ -55,9 +59,11 @@ const SideBarMenu: React.FC<IControl> = ({ isEnabled, handleSetIsEnabled }) => {
         {items.map((item: any, index: number) => (
           <Item key={index}>
             <Icon>
-              <item.icon>Carrinho</item.icon>
+              <item.icon />
             </Icon>
-            <p>{item.title}</p>
+            <ItemTitleContainer>
+              <ItemTitle>{item.title}</ItemTitle>
+            </ItemTitleContainer>
           </Item>
         ))}
       </MenuContainer>
