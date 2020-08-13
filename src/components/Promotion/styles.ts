@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-evenly;
 
-  background-color: ${props => props.theme.colors.secundaryYellow};
+  background-color: ${props => props.theme.colors.secondaryYellow};
   margin: 32px 0;
   border-radius: 20px;
   height: 140px;
@@ -45,7 +45,7 @@ export const Title = styled.h1`
 
 export const Subtitle = styled.p`
   font-size: 18px;
-  color: ${props => props.theme.colors.secundaryGray};
+  color: ${props => props.theme.colors.secondaryGray};
 
   ${props => props.theme.breakpoints.sm} {
     font-size: 14px;

@@ -5,7 +5,7 @@ export const Container = styled.div`
   border-radius: 10px;
   padding: 16px;
   width: 100%;
-  color: ${props => props.theme.colors.secundaryGray};
+  color: ${props => props.theme.colors.secondaryGray};
 
   display: flex;
   align-items: center;
@@ -17,7 +17,7 @@ export const Container = styled.div`
     color: ${props => props.theme.colors.primaryDark};
 
     &::placeholder {
-      color: ${props => props.theme.colors.secundaryGray};
+      color: ${props => props.theme.colors.secondaryGray};
     }
 
     &:-webkit-autofill,
@@ -30,6 +30,6 @@ export const Container = styled.div`
   }
 
   svg {
-    color: ${props => props.theme.colors.secundaryGray};
+    color: ${props => props.theme.colors.secondaryGray};
   }
 `;

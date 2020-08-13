@@ -69,7 +69,7 @@ export const Item = styled.div`
   height: 50px;
   width: 100%;
   margin: 5px 0px;
-  background-color: ${props => props.theme.colors.secundaryYellow};
+  background-color: ${props => props.theme.colors.secondaryYellow};
 
   &:hover {
     background-color: ${props => props.theme.colors.primaryYellow};
