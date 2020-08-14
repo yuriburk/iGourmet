@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 import {
   Container,
   Title,
@@ -11,12 +12,13 @@ import {
 
 interface ICategories {
   categories: any;
+  title: string;
 }
 
-const Categories: React.FC<ICategories> = ({ categories }) => {
+const Categories: React.FC<ICategories> = ({ categories, title }) => {
   return (
     <Container>
-      <Title>Categorias</Title>
+      <Title>{title}</Title>
 
       <CategoryCarousel>
         {categories.map((category: any, index: number) => (

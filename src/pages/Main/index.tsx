@@ -63,7 +63,7 @@ const Main: React.FC = () => {
         rightComponent={<FiSearch />}
       />
       <Promotion />
-      <Categories categories={categories} />
+      <Categories title={'Categorias'} categories={categories} />
       <SideBarMenu
         isEnabled={isMenuEnabled}
         handleSetIsEnabled={setIsMenuEnabled}

@@ -9,8 +9,11 @@ export const Title = styled.h1`
   margin-bottom: 8px;
 `;
 
-export const CategoryCarousel = styled(Slider).attrs(() => ({
-  dots: true,
+interface ISlide {
+  slidesCount: number;
+}
+
+export const CategoryCarousel = styled(Slider).attrs({
   infinite: true,
   speed: 500,
   slidesToShow: 8,
@@ -45,7 +48,7 @@ export const CategoryCarousel = styled(Slider).attrs(() => ({
       },
     },
   ],
-}))``;
+})``;
 
 export const CategoryItem = styled.div`
   display: flex;
