@@ -10,6 +10,7 @@ import {
   CategoryCarousel,
   CategoryItemContainer,
   CategoryItem,
+  ImageContainer,
   CategoryImage,
   CategoryTitle,
 } from './styles';
@@ -39,7 +40,9 @@ const Categories: React.FC<ICategories> = ({ categories, title, more }) => {
         {categories.map((category: any, index: number) => (
           <CategoryItemContainer key={index}>
             <CategoryItem>
-              <CategoryImage src={category.img} alt={category.name} />
+              <ImageContainer>
+                <CategoryImage src={category.img} alt={category.name} />
+              </ImageContainer>
               <CategoryTitle>{category.name}</CategoryTitle>
             </CategoryItem>
           </CategoryItemContainer>

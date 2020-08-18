@@ -4,6 +4,7 @@ import { FiMenu, FiSearch } from 'react-icons/fi';
 import Header from 'components/Header';
 import Promotion from 'components/Promotion';
 import Categories from 'components/Categories';
+import Recommendations from 'components/Recommendations';
 import SideBarMenu from 'components/SideBarMenu';
 import { Container } from './styles';
 
@@ -13,98 +14,71 @@ const categories = [
     name: 'Pizza',
   },
   {
-    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
-    name: 'Pizza',
+    img: 'https://www.flaticon.com/premium-icon/icons/svg/3210/3210788.svg',
+    name: 'Fast Food',
   },
   {
-    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
-    name: 'Pizza',
+    img: 'https://image.flaticon.com/icons/svg/706/706195.svg',
+    name: 'Saudável',
   },
   {
-    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
-    name: 'Pizza',
+    img: 'https://www.flaticon.com/premium-icon/icons/svg/3296/3296533.svg',
+    name: 'Árabe',
   },
   {
-    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
-    name: 'Pizza',
+    img: 'https://www.flaticon.com/premium-icon/icons/svg/1811/1811974.svg',
+    name: 'Burger',
   },
   {
-    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
-    name: 'Pizza',
+    img: 'https://image.flaticon.com/icons/svg/442/442478.svg',
+    name: 'Brasileira',
   },
   {
-    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
-    name: 'Pizza',
+    img: 'https://image.flaticon.com/icons/svg/2243/2243653.svg',
+    name: 'Sushi',
   },
   {
-    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
-    name: 'Pizza',
+    img: 'https://www.flaticon.com/premium-icon/icons/svg/869/869676.svg',
+    name: 'Churrasco',
   },
   {
-    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
-    name: 'Pizza',
+    img: 'https://image.flaticon.com/icons/svg/2913/2913861.svg',
+    name: 'Doce',
   },
   {
-    img: 'https://image.flaticon.com/icons/svg/673/673887.svg',
-    name: 'Pizza',
+    img: 'https://image.flaticon.com/icons/svg/3315/3315140.svg',
+    name: 'Bolo',
   },
 ];
 
 const recommendation = [
   {
-    img:
-      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
-    name: `Domino's`,
+    img: 'https://scx2.b-cdn.net/gfx/news/hires/2016/howcuttingdo.jpg',
+    name: `Brickell Pizzaria`,
   },
   {
-    img:
-      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
-    name: `Domino's`,
+    img: 'https://scx2.b-cdn.net/gfx/news/hires/2016/howcuttingdo.jpg',
+    name: `Brickell Pizzaria`,
   },
   {
-    img:
-      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
-    name: `Domino's`,
+    img: 'https://scx2.b-cdn.net/gfx/news/hires/2016/howcuttingdo.jpg',
+    name: `Brickell Pizzaria`,
   },
   {
-    img:
-      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
-    name: `Domino's`,
+    img: 'https://scx2.b-cdn.net/gfx/news/hires/2016/howcuttingdo.jpg',
+    name: `Brickell Pizzaria`,
   },
   {
-    img:
-      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
-    name: `Domino's`,
+    img: 'https://scx2.b-cdn.net/gfx/news/hires/2016/howcuttingdo.jpg',
+    name: `Brickell Pizzaria`,
   },
   {
-    img:
-      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
-    name: `Domino's`,
+    img: 'https://scx2.b-cdn.net/gfx/news/hires/2016/howcuttingdo.jpg',
+    name: `Brickell Pizzaria`,
   },
   {
-    img:
-      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
-    name: `Domino's`,
-  },
-  {
-    img:
-      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
-    name: `Domino's`,
-  },
-  {
-    img:
-      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
-    name: `Domino's`,
-  },
-  {
-    img:
-      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
-    name: `Domino's`,
-  },
-  {
-    img:
-      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
-    name: `Domino's`,
+    img: 'https://scx2.b-cdn.net/gfx/news/hires/2016/howcuttingdo.jpg',
+    name: `Brickell Pizzaria`,
   },
 ];
 
@@ -136,9 +110,9 @@ const Main: React.FC = () => {
         categories={categories}
         more={categoriesMore}
       />
-      <Categories
+      <Recommendations
         title={'Recomendações'}
-        categories={recommendation}
+        recommendations={recommendation}
         more={recommendationMore}
       />
       <SideBarMenu
