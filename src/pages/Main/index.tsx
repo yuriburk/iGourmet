@@ -50,6 +50,74 @@ const categories = [
   },
 ];
 
+const recommendation = [
+  {
+    img:
+      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
+    name: `Domino's`,
+  },
+  {
+    img:
+      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
+    name: `Domino's`,
+  },
+  {
+    img:
+      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
+    name: `Domino's`,
+  },
+  {
+    img:
+      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
+    name: `Domino's`,
+  },
+  {
+    img:
+      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
+    name: `Domino's`,
+  },
+  {
+    img:
+      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
+    name: `Domino's`,
+  },
+  {
+    img:
+      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
+    name: `Domino's`,
+  },
+  {
+    img:
+      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
+    name: `Domino's`,
+  },
+  {
+    img:
+      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
+    name: `Domino's`,
+  },
+  {
+    img:
+      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
+    name: `Domino's`,
+  },
+  {
+    img:
+      'https://i.pinimg.com/originals/0c/1b/80/0c1b80b48eab75605141970aba8d470a.png',
+    name: `Domino's`,
+  },
+];
+
+const categoriesMore = {
+  title: 'Todas as categorias',
+  link: '#',
+};
+
+const recommendationMore = {
+  title: 'Todas as recomendações',
+  link: '#',
+};
+
 const Main: React.FC = () => {
   const [isMenuEnabled, setIsMenuEnabled] = useState(false);
 
@@ -63,7 +131,16 @@ const Main: React.FC = () => {
         rightComponent={<FiSearch />}
       />
       <Promotion />
-      <Categories title={'Categorias'} categories={categories} />
+      <Categories
+        title={'Categorias'}
+        categories={categories}
+        more={categoriesMore}
+      />
+      <Categories
+        title={'Recomendações'}
+        categories={recommendation}
+        more={recommendationMore}
+      />
       <SideBarMenu
         isEnabled={isMenuEnabled}
         handleSetIsEnabled={setIsMenuEnabled}

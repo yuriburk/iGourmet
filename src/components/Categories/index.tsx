@@ -1,32 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
-import useWindowDimensions from '../../hooks/useWindowDimensions';
 import {
   Container,
+  PresentationContainer,
   Title,
+  MoreContainer,
+  MoreTitle,
+  Icon,
   CategoryCarousel,
+  CategoryItemContainer,
   CategoryItem,
   CategoryImage,
   CategoryTitle,
 } from './styles';
 
+interface IMore {
+  title: string;
+  link: string;
+}
+
 interface ICategories {
   categories: any;
   title: string;
+  more: IMore;
 }
 
-const Categories: React.FC<ICategories> = ({ categories, title }) => {
+const Categories: React.FC<ICategories> = ({ categories, title, more }) => {
   return (
     <Container>
-      <Title>{title}</Title>
-
+      <PresentationContainer>
+        <Title>{title}</Title>
+        <MoreContainer href={more.link}>
+          <MoreTitle>{more.title}</MoreTitle>
+          <Icon />
+        </MoreContainer>
+      </PresentationContainer>
       <CategoryCarousel>
         {categories.map((category: any, index: number) => (
-          <CategoryItem key={index}>
-            <CategoryImage src={category.img} alt={category.name} />
-
-            <CategoryTitle>{category.name}</CategoryTitle>
-          </CategoryItem>
+          <CategoryItemContainer key={index}>
+            <CategoryItem>
+              <CategoryImage src={category.img} alt={category.name} />
+              <CategoryTitle>{category.name}</CategoryTitle>
+            </CategoryItem>
+          </CategoryItemContainer>
         ))}
       </CategoryCarousel>
     </Container>

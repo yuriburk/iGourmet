@@ -1,11 +1,22 @@
-const ScreenSizes = {
-  xsm: '@media only screen and (max-width: 370px)',
-  sm: '@media only screen and (max-width: 538px)',
-  md: '@media only screen and (max-width: 674px)',
-  lg: '@media only screen and (max-width: 768px)',
-  xl: '@media only screen and (max-width: 844px)',
-  xxl: '@media only screen and (max-width: 1100px)',
-  xlg: '@media only screen and (max-width: 1250px)',
+export const screenSize = {
+  xxsm: 320,
+  xsm: 370,
+  sm: 538,
+  md: 674,
+  lg: 768,
+  xl: 844,
+  xxl: 1100,
+  xlg: 1250,
 };
 
-export default ScreenSizes;
+const breakPoints = {
+  xsm: `@media only screen and (max-width: ${screenSize.xsm})`,
+  sm: `@media only screen and (max-width: ${screenSize.sm})`,
+  md: `@media only screen and (max-width: ${screenSize.md})`,
+  lg: `@media only screen and (max-width: ${screenSize.lg})`,
+  xl: `@media only screen and (max-width: ${screenSize.xl})`,
+  xxl: `@media only screen and (max-width: ${screenSize.xxl})`,
+  xlg: `@media only screen and (max-width: ${screenSize.xlg})`,
+};
+
+export default breakPoints;

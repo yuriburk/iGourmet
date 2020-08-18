@@ -1,9 +1,10 @@
 import { colors } from './colors';
-import breakpoints from './breakpoints';
+import breakpoints, { screenSize } from './breakpoints';
 
 export const theme = {
   colors,
   breakpoints,
+  screenSize,
 };
 
 type Theme = typeof theme;
