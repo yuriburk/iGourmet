@@ -50,6 +50,7 @@ export const Icon = styled(RiArrowDropRightLine)`
 `;
 
 export const CategoryCarousel = styled(Slider).attrs(props => ({
+  dots: true,
   infinite: true,
   speed: 500,
   slidesToShow: 10,
@@ -59,35 +60,35 @@ export const CategoryCarousel = styled(Slider).attrs(props => ({
       breakpoint: props.theme.screenSize.xlg,
       settings: {
         slidesToShow: 8,
-        slidesToScroll: 1,
+        slidesToScroll: 4,
       },
     },
     {
       breakpoint: props.theme.screenSize.xxl,
       settings: {
         slidesToShow: 7,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
       },
     },
     {
       breakpoint: props.theme.screenSize.xl,
       settings: {
         slidesToShow: 6,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
       },
     },
     {
       breakpoint: props.theme.screenSize.md,
       settings: {
         slidesToShow: 4,
-        slidesToScroll: 1,
+        slidesToScroll: 2,
       },
     },
     {
       breakpoint: props.theme.screenSize.xxsm,
       settings: {
         slidesToShow: 3,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
       },
     },
   ],
