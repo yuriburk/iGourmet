@@ -17,7 +17,7 @@ const categoriesMore = {
 
 const recommendationMore = {
   title: 'Todas as recomendações',
-  link: '#',
+  link: '/recomendacoes',
 };
 
 const Main: React.FC = () => {
