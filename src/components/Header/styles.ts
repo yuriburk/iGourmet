@@ -13,6 +13,6 @@ export const Container = styled.div`
   }
 
   a {
-    color: ${(props) => props.theme.colors.primaryWhite};
+    color: ${props => props.theme.colors.primaryWhite};
   }
 `;
