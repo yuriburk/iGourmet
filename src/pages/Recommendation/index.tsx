@@ -3,6 +3,7 @@ import { FiMenu, FiSearch } from 'react-icons/fi';
 
 import Header from 'components/Header';
 import SideBarMenu from 'components/SideBarMenu';
+import Filter from 'components/Filter';
 import { Container } from './styles';
 
 const Recommendation: React.FC = () => {
@@ -17,6 +18,7 @@ const Recommendation: React.FC = () => {
         title="iGourmet"
         rightComponent={<FiSearch />}
       />
+      <Filter />
       <SideBarMenu
         isEnabled={isMenuEnabled}
         handleSetIsEnabled={setIsMenuEnabled}
