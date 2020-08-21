@@ -1,12 +1,14 @@
 import React, { Suspense, lazy } from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import { ReactLoadingContainer } from './styles';
+
 const Main = lazy(() => import('../pages/Main'));
 const Recommendation = lazy(() => import('../pages/Recommendation'));
 
 const Loading = (
   <div>
-    <p>Loading...</p>
+    <ReactLoadingContainer />
   </div>
 );
 
