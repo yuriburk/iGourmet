@@ -16,7 +16,7 @@ const categories = [
     name: 'Árabe',
   },
   {
-    img: 'https://www.flaticon.com/premium-icon/icons/svg/1811/1811974.svg',
+    img: 'https://image.flaticon.com/icons/svg/877/877951.svg',
     name: 'Burger',
   },
   {

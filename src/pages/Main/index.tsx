@@ -24,7 +24,7 @@ const recommendationMore = {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const offersMore = {
-  title: 'Todas as categorias',
+  title: 'Todas as ofertas',
   link: '#',
 };
 
