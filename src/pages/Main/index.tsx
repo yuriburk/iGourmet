@@ -4,11 +4,11 @@ import { FiMenu, FiSearch } from 'react-icons/fi';
 import Header from 'components/Header';
 import Promotion from 'components/Promotion';
 import Categories from 'components/Categories';
-import Recommendations from 'components/Recommendations';
+import Restaurants from 'components/Restaurants';
 import Offers from 'components/Offers';
 import SideBarMenu from 'components/SideBarMenu';
 import categories from 'api/categories';
-import recommendations from 'api/recommendations';
+import restaurants from 'api/restaurants';
 import offers from 'api/offers';
 import { Container } from './styles';
 
@@ -17,15 +17,15 @@ const categoriesMore = {
   link: '#',
 };
 
-const recommendationMore = {
-  title: 'Todas as recomendações',
-  link: '/recomendacoes',
-};
-
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const offersMore = {
   title: 'Todas as ofertas',
   link: '#',
+};
+
+const restaurantMore = {
+  title: 'Todos os restaurantes',
+  link: '/recomendacoes',
 };
 
 const Main: React.FC = () => {
@@ -47,10 +47,10 @@ const Main: React.FC = () => {
         more={categoriesMore}
       />
       <Offers title={'Ofertas'} offers={offers} more={offersMore} />
-      <Recommendations
-        title={'Recomendações'}
-        recommendations={recommendations}
-        more={recommendationMore}
+      <Restaurants
+        title={'Restaurantes'}
+        restaurants={restaurants}
+        more={restaurantMore}
       />
       <SideBarMenu
         isEnabled={isMenuEnabled}
