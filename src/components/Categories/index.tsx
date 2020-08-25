@@ -1,12 +1,8 @@
 import React from 'react';
 
+import Presentation from '../Presentation';
 import {
   Container,
-  PresentationContainer,
-  Title,
-  MoreContainer,
-  MoreTitle,
-  Icon,
   CategoryCarousel,
   CategoryItemContainer,
   CategoryItem,
@@ -27,15 +23,17 @@ interface ICategories {
 }
 
 const Categories: React.FC<ICategories> = ({ categories, title, more }) => {
+  const presentation = {
+    data: {
+      title: title,
+      link: more.link,
+      moreTitle: more.title,
+    },
+  };
+
   return (
     <Container>
-      <PresentationContainer>
-        <Title>{title}</Title>
-        <MoreContainer href={more.link}>
-          <MoreTitle>{more.title}</MoreTitle>
-          <Icon />
-        </MoreContainer>
-      </PresentationContainer>
+      <Presentation data={presentation.data} />
       <CategoryCarousel>
         {categories.map((category: any, index: number) => (
           <CategoryItemContainer key={index}>

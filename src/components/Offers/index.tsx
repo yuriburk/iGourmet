@@ -1,12 +1,8 @@
 import React from 'react';
 
+import Presentation from '../Presentation';
 import {
   Container,
-  PresentationContainer,
-  Title,
-  MoreContainer,
-  MoreTitle,
-  Icon,
   OfferCarousel,
   OfferItemContainer,
   OfferItem,
@@ -40,15 +36,17 @@ interface IOffers {
 }
 
 const Offers: React.FC<IOffers> = ({ offers, title, more }) => {
+  const presentation = {
+    data: {
+      title: title,
+      link: more.link,
+      moreTitle: more.title,
+    },
+  };
+
   return (
     <Container>
-      <PresentationContainer>
-        <Title>{title}</Title>
-        <MoreContainer href={more.link}>
-          <MoreTitle>{more.title}</MoreTitle>
-          <Icon />
-        </MoreContainer>
-      </PresentationContainer>
+      <Presentation data={presentation.data} />
       <OfferCarousel>
         {offers.map((Offer: IOffer, index: number) => (
           <OfferItemContainer key={index}>

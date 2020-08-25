@@ -60,7 +60,7 @@ export const MenuIcon = styled.div`
   justify-content: center;
 `;
 
-export const Item = styled.div`
+export const Item = styled.a`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -70,6 +70,8 @@ export const Item = styled.div`
   width: 100%;
   margin: 5px 0px;
   background-color: ${props => props.theme.colors.secondaryYellow};
+  color: ${props => props.theme.colors.primaryDark};
+  text-decoration: none;
 
   &:hover {
     background-color: ${props => props.theme.colors.primaryYellow};
@@ -97,4 +99,6 @@ export const ItemTitleContainer = styled.div`
 export const ItemTitle = styled.p`
   font-weight: bold;
   color: ${props => props.theme.colors.primaryDark};
+  white-space: nowrap;
+  overflow: hidden;
 `;

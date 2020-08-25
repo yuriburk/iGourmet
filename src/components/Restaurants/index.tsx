@@ -1,24 +1,8 @@
 import React from 'react';
 
-import {
-  Container,
-  PresentationContainer,
-  Title,
-  MoreContainer,
-  MoreTitle,
-  Icon,
-  RestaurantCarousel,
-  RestaurantItemContainer,
-  RestaurantItem,
-  RestaurantImage,
-  RestaurantSpec,
-  RestaurantTitle,
-  RestaurantInfoContainer,
-  ScoreIcon,
-  ScoreInfo,
-  RestaurantInfo,
-  TextWrapper,
-} from './styles';
+import Presentation from '../Presentation';
+import Card from './Card';
+import { Container, RestaurantCarousel } from './styles';
 
 interface IRestaurant {
   img: string;
@@ -37,32 +21,20 @@ interface IRestaurants {
 }
 
 const Restaurants: React.FC<IRestaurants> = ({ restaurants, title, more }) => {
+  const presentation = {
+    data: {
+      title: title,
+      link: more.link,
+      moreTitle: more.title,
+    },
+  };
+
   return (
     <Container>
-      <PresentationContainer>
-        <Title>{title}</Title>
-        <MoreContainer href={more.link}>
-          <MoreTitle>{more.title}</MoreTitle>
-          <Icon />
-        </MoreContainer>
-      </PresentationContainer>
+      <Presentation data={presentation.data} />
       <RestaurantCarousel>
         {restaurants.map((Restaurant: IRestaurant, index: number) => (
-          <RestaurantItemContainer key={index}>
-            <RestaurantItem>
-              <RestaurantImage src={Restaurant.img} alt={Restaurant.name} />
-              <RestaurantSpec>
-                <TextWrapper>
-                  <RestaurantTitle>{Restaurant.name}</RestaurantTitle>
-                </TextWrapper>
-                <RestaurantInfoContainer>
-                  <ScoreIcon />
-                  <ScoreInfo>5.0</ScoreInfo>
-                  <RestaurantInfo>Pizza</RestaurantInfo>
-                </RestaurantInfoContainer>
-              </RestaurantSpec>
-            </RestaurantItem>
-          </RestaurantItemContainer>
+          <Card name={Restaurant.name} img={Restaurant.img} key={index} />
         ))}
       </RestaurantCarousel>
     </Container>
