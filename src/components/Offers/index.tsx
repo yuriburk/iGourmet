@@ -38,7 +38,7 @@ interface IOffers {
 const Offers: React.FC<IOffers> = ({ offers, title, more }) => {
   const presentation = {
     data: {
-      title: title,
+      title,
       link: more.link,
       moreTitle: more.title,
     },

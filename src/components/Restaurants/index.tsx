@@ -23,7 +23,7 @@ interface IRestaurants {
 const Restaurants: React.FC<IRestaurants> = ({ restaurants, title, more }) => {
   const presentation = {
     data: {
-      title: title,
+      title,
       link: more.link,
       moreTitle: more.title,
     },

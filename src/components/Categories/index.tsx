@@ -25,7 +25,7 @@ interface ICategories {
 const Categories: React.FC<ICategories> = ({ categories, title, more }) => {
   const presentation = {
     data: {
-      title: title,
+      title,
       link: more.link,
       moreTitle: more.title,
     },
