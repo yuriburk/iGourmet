@@ -114,7 +114,7 @@ export const OfferSpec = styled.div`
   background-color: ${props => props.theme.colors.quaternaryGray};
   border-radius: 0px 0px 10px 10px;
   width: 100%;
-  padding: 4px;
+  padding: 8px;
 `;
 
 export const OfferTitle = styled.h2`

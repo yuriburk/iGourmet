@@ -7,19 +7,7 @@ export const Container = styled.div`
   justify-content: flex-start;
 
   margin: 10px 0px;
-
-  h1 + a {
-    margin: 0px 10px;
-
-    ${props => props.theme.breakpoints.sm} {
-      margin: 0px;
-    }
-  }
-
-  ${props => props.theme.breakpoints.sm} {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+  width: 100%;
 `;
 
 export const Title = styled.h1`

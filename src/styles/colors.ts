@@ -10,5 +10,5 @@ export const colors = {
   secondaryGray: '#ababab',
   secondaryYellow: '#fce7c7',
   tertiaryGray: '#8d8f7f',
-  quaternaryGray: '#efefef',
+  quaternaryGray: '#fdf9f9',
 };

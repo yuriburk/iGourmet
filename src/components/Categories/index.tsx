@@ -11,31 +11,23 @@ import {
   CategoryTitle,
 } from './styles';
 
-interface IMore {
+interface ICategorie {
+  img: string;
+  name: string;
+}
+
+interface ICategories {
+  categories: ICategorie[];
   title: string;
   link: string;
 }
 
-interface ICategories {
-  categories: any;
-  title: string;
-  more: IMore;
-}
-
-const Categories: React.FC<ICategories> = ({ categories, title, more }) => {
-  const presentation = {
-    data: {
-      title,
-      link: more.link,
-      moreTitle: more.title,
-    },
-  };
-
+const Categories: React.FC<ICategories> = ({ categories, title, link }) => {
   return (
     <Container>
-      <Presentation data={presentation.data} />
+      <Presentation title={title} link={link} />
       <CategoryCarousel>
-        {categories.map((category: any, index: number) => (
+        {categories.map((category: ICategorie, index: number) => (
           <CategoryItemContainer key={index}>
             <CategoryItem>
               <ImageContainer>

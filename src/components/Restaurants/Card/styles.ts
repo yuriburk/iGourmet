@@ -4,14 +4,14 @@ import { AiOutlineStar } from 'react-icons/ai';
 export const Container = styled.div`
   display: flex !important;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 
-  padding: 10px;
+  padding: 0px 12px 12px 16px;
+  overflow: hidden;
 `;
 
 export const RestaurantItem = styled.div`
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
 
@@ -19,6 +19,9 @@ export const RestaurantItem = styled.div`
   width: 100%;
   background-color: ${props => props.theme.colors.primaryWhite};
   overflow: hidden;
+  border: 1px solid;
+  border-color: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
 
   img + div {
     margin: 0px 8px;

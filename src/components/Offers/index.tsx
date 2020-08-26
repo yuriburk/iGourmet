@@ -24,29 +24,16 @@ interface IOffer {
   offer_price: string;
 }
 
-interface IMore {
+interface IOffers {
+  offers: IOffer[];
   title: string;
   link: string;
 }
 
-interface IOffers {
-  offers: Array<IOffer>;
-  title: string;
-  more: IMore;
-}
-
-const Offers: React.FC<IOffers> = ({ offers, title, more }) => {
-  const presentation = {
-    data: {
-      title,
-      link: more.link,
-      moreTitle: more.title,
-    },
-  };
-
+const Offers: React.FC<IOffers> = ({ offers, title, link }) => {
   return (
     <Container>
-      <Presentation data={presentation.data} />
+      <Presentation title={title} link={link} />
       <OfferCarousel>
         {offers.map((Offer: IOffer, index: number) => (
           <OfferItemContainer key={index}>

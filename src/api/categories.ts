@@ -4,7 +4,7 @@ const categories = [
     name: 'Pizza',
   },
   {
-    img: 'https://www.flaticon.com/premium-icon/icons/svg/3210/3210788.svg',
+    img: 'https://image.flaticon.com/icons/svg/3069/3069343.svg',
     name: 'Fast Food',
   },
   {
@@ -12,7 +12,7 @@ const categories = [
     name: 'Saudável',
   },
   {
-    img: 'https://www.flaticon.com/premium-icon/icons/svg/3296/3296533.svg',
+    img: 'https://image.flaticon.com/icons/svg/1046/1046764.svg',
     name: 'Árabe',
   },
   {
@@ -28,7 +28,7 @@ const categories = [
     name: 'Sushi',
   },
   {
-    img: 'https://www.flaticon.com/premium-icon/icons/svg/869/869676.svg',
+    img: 'https://image.flaticon.com/icons/svg/883/883512.svg',
     name: 'Churrasco',
   },
   {

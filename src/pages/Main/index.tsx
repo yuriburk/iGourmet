@@ -12,22 +12,6 @@ import restaurants from 'api/restaurants';
 import offers from 'api/offers';
 import { Container } from './styles';
 
-const categoriesMore = {
-  title: 'Todas as categorias',
-  link: '#',
-};
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const offersMore = {
-  title: 'Todas as ofertas',
-  link: '#',
-};
-
-const restaurantMore = {
-  title: 'Todos os restaurantes',
-  link: '/recomendacoes',
-};
-
 const Main: React.FC = () => {
   const [isMenuEnabled, setIsMenuEnabled] = useState(false);
 
@@ -41,17 +25,9 @@ const Main: React.FC = () => {
         rightComponent={<FiSearch />}
       />
       <Promotion />
-      <Categories
-        title={'Categorias'}
-        categories={categories}
-        more={categoriesMore}
-      />
-      <Offers title={'Ofertas'} offers={offers} more={offersMore} />
-      <Restaurants
-        title={'Restaurantes'}
-        restaurants={restaurants}
-        more={restaurantMore}
-      />
+      <Categories categories={categories} title={'Categorias'} link={'#'} />
+      <Offers offers={offers} title={'Ofertas'} link={'#'} />
+      <Restaurants restaurants={restaurants} title={'Restaurantes'} />
       <SideBarMenu
         isEnabled={isMenuEnabled}
         handleSetIsEnabled={setIsMenuEnabled}

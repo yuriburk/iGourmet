@@ -55,7 +55,7 @@ interface IMenuItem {
 
 interface IControl {
   isEnabled: boolean;
-  handleSetIsEnabled: any;
+  handleSetIsEnabled: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const SideBarMenu: React.FC<IControl> = ({ isEnabled, handleSetIsEnabled }) => {

@@ -3,8 +3,8 @@ import { animated } from 'react-spring';
 
 export const Container = styled(animated.div)`
   position: absolute;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   left: 0;
@@ -16,8 +16,8 @@ export const Container = styled(animated.div)`
 export const OverlayContainer = styled(animated.div)`
   position: fixed;
   background-color: rgba(0, 0, 0, 0.2);
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   left: 0;
@@ -29,7 +29,7 @@ export const OverlayContainer = styled(animated.div)`
 export const MenuContainer = styled(animated.div)`
   position: fixed;
   background-color: ${props => props.theme.colors.primaryWhite};
-  height: 100vh;
+  height: 100%;
   width: 250px;
   z-index: 2;
 `;
