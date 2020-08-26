@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Presentation from '../Presentation';
+import { IOffers, IOffer } from '../../models/global';
 import {
   Container,
   OfferCarousel,
@@ -15,20 +16,6 @@ import {
   OldPriceInfo,
   TextWrapper,
 } from './styles';
-
-interface IOffer {
-  img: string;
-  offer_name: string;
-  restaurant_name: string;
-  old_price: string;
-  offer_price: string;
-}
-
-interface IOffers {
-  offers: IOffer[];
-  title: string;
-  link: string;
-}
 
 const Offers: React.FC<IOffers> = ({ offers, title, link }) => {
   return (

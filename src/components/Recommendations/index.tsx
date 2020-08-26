@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { IRecommendation } from '../../models/global';
 import {
   Container,
   PresentationContainer,
@@ -18,17 +19,6 @@ import {
   ScoreInfo,
   RecommendationInfo,
 } from './styles';
-
-interface IMore {
-  title: string;
-  link: string;
-}
-
-interface IRecommendation {
-  recommendations: any;
-  title: string;
-  more: IMore;
-}
 
 const Recommendations: React.FC<IRecommendation> = ({
   recommendations,

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Presentation from '../Presentation';
+import { ICategories, ICategorie } from '../../models/global';
 import {
   Container,
   CategoryCarousel,
@@ -10,17 +11,6 @@ import {
   CategoryImage,
   CategoryTitle,
 } from './styles';
-
-interface ICategorie {
-  img: string;
-  name: string;
-}
-
-interface ICategories {
-  categories: ICategorie[];
-  title: string;
-  link: string;
-}
 
 const Categories: React.FC<ICategories> = ({ categories, title, link }) => {
   return (

@@ -4,8 +4,8 @@ import { MdFavoriteBorder } from 'react-icons/md';
 import { AiOutlineShoppingCart, AiOutlineHome } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
 import { useSpring } from 'react-spring';
-import { IconType } from 'react-icons/lib';
 
+import { IControl, IMenuItem } from '../../models/global';
 import {
   Container,
   OverlayContainer,
@@ -46,17 +46,6 @@ const items = [
     url: '#',
   },
 ];
-
-interface IMenuItem {
-  icon: IconType;
-  title: string;
-  url: string;
-}
-
-interface IControl {
-  isEnabled: boolean;
-  handleSetIsEnabled: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 const SideBarMenu: React.FC<IControl> = ({ isEnabled, handleSetIsEnabled }) => {
   const menuContainerProps = useSpring({

@@ -2,17 +2,8 @@ import React from 'react';
 
 import Presentation from '../Presentation';
 import Card from './Card';
+import { IRestaurants, IRestaurant } from '../../models/global';
 import { Container, ItemsContainer } from './styles';
-
-interface IRestaurant {
-  img: string;
-  name: string;
-}
-
-interface IRestaurants {
-  restaurants: IRestaurant[];
-  title: string;
-}
 
 const Restaurants: React.FC<IRestaurants> = ({ restaurants, title }) => {
   return (

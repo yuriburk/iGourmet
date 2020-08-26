@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 
+import { IInputContainerProps } from '../../models/global';
 import Tooltip from '../Tooltip';
 
 export const Container = styled.div`
@@ -12,12 +13,6 @@ export const Label = styled.label`
   font-weight: bold;
   margin-bottom: 12px;
 `;
-
-interface IInputContainerProps {
-  isFocused: boolean;
-  isFilled: boolean;
-  isErrored: boolean;
-}
 
 export const InputContainer = styled.div<IInputContainerProps>`
   background: #232129;

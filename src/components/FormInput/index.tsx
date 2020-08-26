@@ -5,18 +5,12 @@ import React, {
   useState,
   useCallback,
 } from 'react';
-import { IconBaseProps } from 'react-icons';
+
 import { FiAlertCircle } from 'react-icons/fi';
 import { useField } from '@unform/core';
 
+import { InputProps } from '../../models/global';
 import { Container, Label, InputContainer, Error } from './styles';
-
-interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  label: string;
-  name: string;
-  containerStyle?: Record<string, unknown>;
-  icon?: React.ComponentType<IconBaseProps>;
-}
 
 const FormInput: React.FC<InputProps> = ({
   label,

@@ -1,18 +1,10 @@
 import React, { useRef, useEffect } from 'react';
-import ReactSelect, {
-  OptionTypeBase,
-  Props as SelectProps,
-} from 'react-select';
+import ReactSelect from 'react-select';
 import { useField } from '@unform/core';
 
 import getStateValue from 'utils/getStateValue';
+import { IProps } from '../../models/global';
 import { Container, Label, customStyles } from './styles';
-
-interface IProps extends SelectProps<OptionTypeBase> {
-  name: string;
-  placeholder?: string;
-  label?: string;
-}
 
 const FormSelect: React.FC<IProps> = ({
   name,

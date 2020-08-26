@@ -2,14 +2,8 @@ import React, { useCallback } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import debounce from 'lodash.debounce';
 
+import { ISearchProps } from '../../models/global';
 import { Container } from './styles';
-
-interface ISearchProps {
-  onChange(event: React.ChangeEvent<HTMLInputElement>): void;
-  debounceTime?: number;
-  placeholder?: string;
-  containerStyle?: Record<string, unknown>;
-}
 
 const SearchBox: React.FC<ISearchProps> = ({
   onChange,

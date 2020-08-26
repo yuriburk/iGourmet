@@ -1,12 +1,7 @@
 import React from 'react';
 
+import { IHeaderProps } from '../../models/global';
 import { Container } from './styles';
-
-interface IHeaderProps {
-  leftComponent?: React.ReactNode;
-  title: string;
-  rightComponent?: React.ReactNode;
-}
 
 const Header: React.FC<IHeaderProps> = ({
   leftComponent,

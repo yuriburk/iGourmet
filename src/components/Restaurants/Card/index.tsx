@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { IRestaurant } from '../../../models/global';
 import {
   Container,
   RestaurantItem,
@@ -12,11 +13,6 @@ import {
   RestaurantInfo,
   TextWrapper,
 } from './styles';
-
-interface IRestaurant {
-  img: string;
-  name: string;
-}
 
 const Card: React.FC<IRestaurant> = ({ img, name }) => {
   return (

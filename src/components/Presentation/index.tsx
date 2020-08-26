@@ -1,11 +1,7 @@
 import React from 'react';
 
+import { IPresentation } from '../../models/global';
 import { Container, Title, MoreContainer, Icon } from './styles';
-
-interface IPresentation {
-  title: string;
-  link?: string;
-}
 
 const Presentation: React.FC<IPresentation> = ({ title, link }) => {
   return (
