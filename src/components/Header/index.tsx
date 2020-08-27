@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { IHeaderProps } from '../../models/global';
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 const Header: React.FC<IHeaderProps> = ({
   leftComponent,
@@ -9,9 +9,11 @@ const Header: React.FC<IHeaderProps> = ({
   rightComponent,
 }) => (
   <Container>
-    {leftComponent}
-    <h1>{title}</h1>
-    {rightComponent}
+    <Content>
+      {leftComponent}
+      <h1>{title}</h1>
+      {rightComponent}
+    </Content>
   </Container>
 );
 

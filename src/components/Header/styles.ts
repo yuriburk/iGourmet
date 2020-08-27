@@ -1,10 +1,22 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: ${props => props.theme.colors.primaryWhite};
+  z-index: 1;
+`;
+
+export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 18px;
+
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px;
 
   svg {
     cursor: pointer;

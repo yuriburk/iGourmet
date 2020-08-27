@@ -1,10 +1,4 @@
-import React, {
-  InputHTMLAttributes,
-  useEffect,
-  useRef,
-  useState,
-  useCallback,
-} from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 
 import { FiAlertCircle } from 'react-icons/fi';
 import { useField } from '@unform/core';

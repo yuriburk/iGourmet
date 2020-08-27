@@ -84,14 +84,15 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export interface ICategorie {
-  img: string;
+  img?: string;
   name: string;
+  full_img?: string;
 }
 
 export interface ICategories {
   categories: ICategorie[];
   title: string;
-  link: string;
+  link?: string;
 }
 
 interface IInputContainerProps {

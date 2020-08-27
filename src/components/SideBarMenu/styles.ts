@@ -11,6 +11,7 @@ export const Container = styled(animated.div)`
   top: 0;
   right: 0;
   bottom: 0;
+  z-index: 2;
 `;
 
 export const OverlayContainer = styled(animated.div)`
@@ -31,7 +32,6 @@ export const MenuContainer = styled(animated.div)`
   background-color: ${props => props.theme.colors.primaryWhite};
   height: 100%;
   width: 250px;
-  z-index: 2;
 `;
 
 export const MenuHeader = styled.div`

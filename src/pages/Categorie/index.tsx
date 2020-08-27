@@ -2,17 +2,12 @@ import React, { useState } from 'react';
 import { FiMenu, FiSearch } from 'react-icons/fi';
 
 import Header from 'components/Header';
-import Promotion from 'components/Promotion';
-import Categories from 'components/Categories';
-import Restaurants from 'components/Restaurants';
-import Offers from 'components/Offers';
 import SideBarMenu from 'components/SideBarMenu';
+import List from 'components/CategorieList/index';
 import categories from 'api/categories';
-import restaurants from 'api/restaurants';
-import offers from 'api/offers';
 import { Container } from './styles';
 
-const Main: React.FC = () => {
+const Categorie: React.FC = () => {
   const [isMenuEnabled, setIsMenuEnabled] = useState(false);
 
   return (
@@ -24,14 +19,7 @@ const Main: React.FC = () => {
         title="iGourmet"
         rightComponent={<FiSearch />}
       />
-      <Promotion />
-      <Categories
-        categories={categories}
-        title={'Categorias'}
-        link={'/categorias'}
-      />
-      <Offers offers={offers} title={'Ofertas'} link={'#'} />
-      <Restaurants restaurants={restaurants} title={'Restaurantes'} />
+      <List categories={categories} title={'Categorias'} />
       <SideBarMenu
         isEnabled={isMenuEnabled}
         handleSetIsEnabled={setIsMenuEnabled}
@@ -40,4 +28,4 @@ const Main: React.FC = () => {
   );
 };
 
-export default Main;
+export default Categorie;
