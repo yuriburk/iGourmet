@@ -9,7 +9,7 @@ const categories = [
     img: 'https://image.flaticon.com/icons/svg/3069/3069343.svg',
     name: 'Fast Food',
     full_img:
-      'https://media-manager.starsinsider.com/1920/na_5d723eaa856e3.jpg',
+      'https://i0.wp.com/perfilwe.com.br/wp-content/uploads/2019/10/Que-comida-saudável-que-nada-brasileiro-gosta-de-fast-food.jpg?fit=1200%2C800',
   },
   {
     img: 'https://image.flaticon.com/icons/svg/706/706195.svg',
@@ -33,13 +33,12 @@ const categories = [
     img: 'https://image.flaticon.com/icons/svg/442/442478.svg',
     name: 'Brasileira',
     full_img:
-      'https://s2.glbimg.com/Ot3tuPq8UARnHo6COcAZDYUJ62U=/e.glbimg.com/og/ed/f/original/2018/02/20/comida-tipica-panelinhasdobrasil.jpg',
+      'https://blog.cowboystore.com.br/wp-content/uploads/2018/09/Destaque-Comidas-típicas-de-cada-região-para-o-seu-almoço-de-domingo.jpeg',
   },
   {
     img: 'https://image.flaticon.com/icons/svg/2243/2243653.svg',
     name: 'Sushi',
-    full_img:
-      'https://diaonline.ig.com.br/wp-content/uploads/2019/03/lugares-para-comer-sushi-em-brasilia-13-e1552413716295.jpg',
+    full_img: 'https://sumidasushi.com.br/wp-content/uploads/Sumida-6.png',
   },
   {
     img: 'https://image.flaticon.com/icons/svg/883/883512.svg',

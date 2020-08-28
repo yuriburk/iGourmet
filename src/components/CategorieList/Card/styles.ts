@@ -23,8 +23,8 @@ export const RestaurantItem = styled.div`
   border: 1px solid;
   border-color: rgba(0, 0, 0, 0.05);
   border-radius: 10px;
-  max-height: 300px;
-  min-height: 180px;
+  max-height: 220px;
+  min-height: 160px;
 
   img + div {
     margin: 0px 8px;
@@ -34,12 +34,12 @@ export const RestaurantItem = styled.div`
 export const RestaurantImage = styled.img`
   width: 100%;
   max-height: 100%;
-  min-height: 180px;
+  min-height: 160px;
   filter: brightness(50%);
 `;
 
 export const RestaurantTitle = styled.h2`
-  font-size: 18px;
+  font-size: 24px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -47,6 +47,10 @@ export const RestaurantTitle = styled.h2`
   bottom: 8px;
   left: 16px;
   color: ${props => props.theme.colors.primaryWhite};
+
+  ${props => props.theme.breakpoints.xl} {
+    font-size: 18px;
+  }
 `;
 
 export const RestaurantInfoContainer = styled.div`
