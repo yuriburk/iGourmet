@@ -84,6 +84,7 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export interface ICategorie {
+  id: string;
   img?: string;
   name: string;
   full_img?: string;

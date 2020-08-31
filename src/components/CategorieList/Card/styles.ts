@@ -10,7 +10,7 @@ export const Container = styled.div`
   overflow: hidden;
 `;
 
-export const RestaurantItem = styled.div`
+export const RestaurantItem = styled.a`
   display: flex;
   align-items: center;
   justify-content: flex-start;

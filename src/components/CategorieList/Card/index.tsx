@@ -8,10 +8,10 @@ import {
   RestaurantTitle,
 } from './styles';
 
-const Card: React.FC<ICategorie> = ({ img, name }) => {
+const Card: React.FC<ICategorie> = ({ id, img, name }) => {
   return (
     <Container>
-      <RestaurantItem>
+      <RestaurantItem href={`/restaurantes/?restaurante=${id}`}>
         <RestaurantImage src={img} alt={name} />
         <RestaurantTitle>{name}</RestaurantTitle>
       </RestaurantItem>

@@ -11,7 +11,11 @@ const Categorie: React.FC<ICategories> = ({ categories, title }) => {
       <Presentation title={title} />
       {categories.map((Categorie: ICategorie, index: number) => (
         <ItemsContainer key={index}>
-          <Card name={Categorie.name} img={Categorie.full_img} />
+          <Card
+            id={Categorie.id}
+            name={Categorie.name}
+            img={Categorie.full_img}
+          />
         </ItemsContainer>
       ))}
     </Container>
