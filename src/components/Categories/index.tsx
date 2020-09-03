@@ -18,7 +18,10 @@ const Categories: React.FC<ICategories> = ({ categories, title, link }) => {
       <Presentation title={title} link={link} />
       <CategoryCarousel>
         {categories.map((category: ICategorie, index: number) => (
-          <CategoryItemContainer key={index}>
+          <CategoryItemContainer
+            key={index}
+            href={`/restaurantes?categories=${category.id}`}
+          >
             <CategoryItem>
               <ImageContainer>
                 <CategoryImage src={category.img} alt={category.name} />

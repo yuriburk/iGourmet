@@ -27,9 +27,11 @@ export interface ISearchProps {
 export interface IRestaurant {
   img: string;
   name: string;
+  categories?: string;
 }
 
 export interface IRestaurants {
+  filter?: string;
   restaurants: IRestaurant[];
   title: string;
 }
@@ -105,4 +107,10 @@ interface IInputContainerProps {
 interface IWindowDimensions {
   width: number;
   height: number;
+}
+
+interface IAny {
+  location: {
+    search?: any;
+  };
 }

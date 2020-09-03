@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { FiMenu, FiSearch } from 'react-icons/fi';
+import queryString from 'query-string';
 
 import Header from 'components/Header';
 import SideBarMenu from 'components/SideBarMenu';
 import Restaurants from 'components/Restaurants';
 import restaurants from 'api/restaurants';
+import { IAny } from '../../models/global';
 import { Container } from './styles';
 
-const Restaurant: React.FC = () => {
+const Restaurant: React.FC<IAny> = params => {
   const [isMenuEnabled, setIsMenuEnabled] = useState(false);
+  const filter = queryString.parse(params.location.search).categories as string;
 
   return (
     <Container>
@@ -19,7 +22,11 @@ const Restaurant: React.FC = () => {
         title="iGourmet"
         rightComponent={<FiSearch />}
       />
-      <Restaurants restaurants={restaurants} title={'Restaurants'} />
+      <Restaurants
+        filter={filter}
+        restaurants={restaurants}
+        title={'Restaurantes'}
+      />
       <SideBarMenu
         isEnabled={isMenuEnabled}
         handleSetIsEnabled={setIsMenuEnabled}

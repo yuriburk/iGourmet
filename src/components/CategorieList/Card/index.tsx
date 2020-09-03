@@ -11,7 +11,7 @@ import {
 const Card: React.FC<ICategorie> = ({ id, img, name }) => {
   return (
     <Container>
-      <RestaurantItem href={`/restaurantes/?restaurante=${id}`}>
+      <RestaurantItem href={`/restaurantes?categories=${id}`}>
         <RestaurantImage src={img} alt={name} />
         <RestaurantTitle>{name}</RestaurantTitle>
       </RestaurantItem>

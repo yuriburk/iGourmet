@@ -50,10 +50,12 @@ export const CategoryCarousel = styled(Slider).attrs(props => ({
   ],
 }))``;
 
-export const CategoryItemContainer = styled.div`
+export const CategoryItemContainer = styled.a`
   display: flex !important;
   align-items: center;
   justify-content: center;
+
+  text-decoration: none;
 `;
 
 export const CategoryItem = styled.div`
@@ -108,6 +110,8 @@ export const CategoryTitle = styled.h2`
   margin-top: 20px;
   text-align: center;
   white-space: nowrap;
+
+  color: ${props => props.theme.colors.primaryDark};
 
   ${props => props.theme.breakpoints.sm} {
     margin-top: 12px;

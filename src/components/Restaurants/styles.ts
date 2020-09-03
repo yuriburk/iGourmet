@@ -17,3 +17,12 @@ export const ItemsContainer = styled.div`
     width: 100%;
   }
 `;
+
+export const NoData = styled.h1`
+  color: ${props => props.theme.colors.primaryOrange};
+
+  transform: translate(50%, -50%);
+  top: 50%;
+  right: 50%;
+  position: fixed;
+`;
