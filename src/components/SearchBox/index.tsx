@@ -1,34 +1,108 @@
-import React, { useCallback } from 'react';
-import { FiSearch } from 'react-icons/fi';
-import debounce from 'lodash.debounce';
+import React, {
+  useRef,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react';
+import debounce from 'lodash.debounce'; 
 
-import { ISearchProps } from '../../models/global';
-import { Container } from './styles';
+import Highlighter from '../Highlighter';
+import {
+  Container,
+  Card,
+  SearchIcon,
+  Input,
+  LoadingIcon,
+  CloseIcon,
+  ItemsContainer,
+  Item,
+} from './styles';
 
-const SearchBox: React.FC<ISearchProps> = ({
+const SearchBox: React.FC<any> = ({
   onChange,
-  debounceTime = 200,
-  placeholder = 'Pesquise aqui...',
-  containerStyle = {},
-  ...rest
+  items,
+  onItemClick,
+  debounceTime = 800,
+  placeholder = 'Pesquisar',
 }) => {
-  const debouncedCallback = debounce(
-    (event: React.ChangeEvent<HTMLInputElement>) => onChange(event),
-    debounceTime,
+  const inputRef = useRef(null);
+  const isMounted = useRef(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [searchWords, setSearchWords] = useState([]);
+
+  const debouncedChange = useMemo(
+    () =>
+      debounce(async value => {
+        await onChange(value);
+
+        if (isMounted.current) setIsLoading(false);
+      }, debounceTime),
+    [onChange, debounceTime],
   );
 
+  useEffect(() => {
+    return () => (isMounted.current = false);
+  }, []);
+
   const handleOnChange = useCallback(
-    (event: React.ChangeEvent<HTMLInputElement>) => {
+    event => {
       event.persist();
-      debouncedCallback(event);
+      const { value } = event.target;
+
+      setSearchWords(value.split(' '));
+
+      setIsLoading(true);
+
+      if (value.length > 0) {
+        debouncedChange(value);
+      }
     },
-    [debouncedCallback],
+    [debouncedChange],
+  );
+
+  const handleOnBlur = useCallback(() => {
+    inputRef.current.value = '';
+  }, []);
+
+  const handleOnItemClick = useCallback(
+    item => {
+      onItemClick(item);
+    },
+    [onItemClick],
   );
 
   return (
-    <Container style={containerStyle}>
-      <input placeholder={placeholder} onChange={handleOnChange} {...rest} />
-      <FiSearch />
+    <Container>
+      <Card>
+        <SearchIcon />
+        <Input
+          ref={inputRef}
+          type="text"
+          placeholder={placeholder}
+          onChange={handleOnChange}
+          onBlur={handleOnBlur}
+          data-testid="SearchBox-Input"
+        />
+        {isLoading ? (
+          <LoadingIcon />
+        ) : (
+          inputRef.current?.value.length > 0 && <CloseIcon />
+        )}
+      </Card>
+      {items?.length > 0 && inputRef.current?.value.length > 0 && (
+        <ItemsContainer>
+          {items.map((item, index) => (
+            <Item
+              key={index}
+              onClick={() => handleOnItemClick(item.value)}
+              data-testid="SearchBox-Item"
+            >
+              <Highlighter searchWords={searchWords} text={item.label} />
+            </Item>
+          ))}
+        </ItemsContainer>
+      )}
     </Container>
   );
 };

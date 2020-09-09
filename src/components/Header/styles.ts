@@ -28,3 +28,7 @@ export const Content = styled.div`
     color: ${props => props.theme.colors.primaryWhite};
   }
 `;
+
+export const SearchBoxContainer = styled.div`
+  width: 50%;
+`;

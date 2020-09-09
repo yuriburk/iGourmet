@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiMenu, FiSearch } from 'react-icons/fi';
+import { FiMenu } from 'react-icons/fi';
 
 import Header from 'components/Header';
 import SideBarMenu from 'components/SideBarMenu';
@@ -16,7 +16,6 @@ const Recommendation: React.FC = () => {
           <FiMenu onClick={() => setIsMenuEnabled(state => !state)} />
         }
         title="iGourmet"
-        rightComponent={<FiSearch />}
       />
       <Filter />
       <SideBarMenu

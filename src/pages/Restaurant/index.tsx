@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiMenu, FiSearch } from 'react-icons/fi';
+import { FiMenu } from 'react-icons/fi';
 import queryString from 'query-string';
 
 import Header from 'components/Header';
@@ -20,7 +20,6 @@ const Restaurant: React.FC<IAny> = params => {
           <FiMenu onClick={() => setIsMenuEnabled(state => !state)} />
         }
         title="iGourmet"
-        rightComponent={<FiSearch />}
       />
       <Restaurants
         filter={filter}

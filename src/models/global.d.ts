@@ -69,7 +69,6 @@ export interface IOffers {
 export interface IHeaderProps {
   leftComponent?: React.ReactNode;
   title: string;
-  rightComponent?: React.ReactNode;
 }
 
 export interface IProps extends SelectProps<OptionTypeBase> {

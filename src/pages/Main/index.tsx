@@ -22,7 +22,6 @@ const Main: React.FC = () => {
           <FiMenu onClick={() => setIsMenuEnabled(state => !state)} />
         }
         title="iGourmet"
-        rightComponent={<FiSearch />}
       />
       <Promotion />
       <Categories
