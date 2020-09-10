@@ -9,8 +9,8 @@ const Highlighter: React.FC<any> = ({
   text,
   autoEscape = true,
   style = {
-    backgroundColor: colors.primaryRed,
-    color: colors.primaryWhite,
+    backgroundColor: colors.primaryYellow,
+    color: colors.primaryDark,
   },
 }) => {
   return (

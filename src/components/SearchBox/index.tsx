@@ -5,7 +5,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import debounce from 'lodash.debounce'; 
+import debounce from 'lodash.debounce';
 
 import Highlighter from '../Highlighter';
 import {
@@ -26,14 +26,14 @@ const SearchBox: React.FC<any> = ({
   debounceTime = 800,
   placeholder = 'Pesquisar',
 }) => {
-  const inputRef = useRef(null);
+  const inputRef = useRef<any>(null);
   const isMounted = useRef(true);
   const [isLoading, setIsLoading] = useState(false);
   const [searchWords, setSearchWords] = useState([]);
 
   const debouncedChange = useMemo(
     () =>
-      debounce(async value => {
+      debounce(async (value: any) => {
         await onChange(value);
 
         if (isMounted.current) setIsLoading(false);
@@ -42,7 +42,7 @@ const SearchBox: React.FC<any> = ({
   );
 
   useEffect(() => {
-    return () => (isMounted.current = false);
+    return () => {isMounted.current = false};
   }, []);
 
   const handleOnChange = useCallback(
@@ -52,9 +52,8 @@ const SearchBox: React.FC<any> = ({
 
       setSearchWords(value.split(' '));
 
-      setIsLoading(true);
-
       if (value.length > 0) {
+        setIsLoading(true);
         debouncedChange(value);
       }
     },
@@ -63,6 +62,7 @@ const SearchBox: React.FC<any> = ({
 
   const handleOnBlur = useCallback(() => {
     inputRef.current.value = '';
+    setSearchWords(inputRef.current.value.split(' '));
   }, []);
 
   const handleOnItemClick = useCallback(
@@ -72,6 +72,10 @@ const SearchBox: React.FC<any> = ({
     [onItemClick],
   );
 
+  const filterPerContains = (value: any) => {
+    value.value.includes(inputRef.current.value);
+  };
+
   return (
     <Container>
       <Card>
@@ -80,19 +84,18 @@ const SearchBox: React.FC<any> = ({
           ref={inputRef}
           type="text"
           placeholder={placeholder}
-          onChange={handleOnChange}
-          onBlur={handleOnBlur}
+          onChange={handleOnChange}    
           data-testid="SearchBox-Input"
         />
         {isLoading ? (
           <LoadingIcon />
         ) : (
-          inputRef.current?.value.length > 0 && <CloseIcon />
+          inputRef.current?.value.length > 0 && <CloseIcon onClick={handleOnBlur} />
         )}
       </Card>
       {items?.length > 0 && inputRef.current?.value.length > 0 && (
         <ItemsContainer>
-          {items.map((item, index) => (
+          {items.filter(filterPerContains).map((item : any, index : any) => (
             <Item
               key={index}
               onClick={() => handleOnItemClick(item.value)}

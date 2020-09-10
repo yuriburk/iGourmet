@@ -4,7 +4,7 @@ import { useField } from '@unform/core';
 
 import getStateValue from 'utils/getStateValue';
 import { IProps } from '../../models/global';
-import { Container, Label, customStyles } from './styles';
+import { Container, Label } from './styles';
 
 const FormSelect: React.FC<IProps> = ({
   name,
@@ -32,7 +32,6 @@ const FormSelect: React.FC<IProps> = ({
         defaultValue={defaultValue}
         ref={selectRef}
         classNamePrefix="react-select"
-        styles={customStyles}
         {...rest}
       />
     </Container>
