@@ -69,6 +69,7 @@ export interface IOffers {
 export interface IHeaderProps {
   leftComponent?: React.ReactNode;
   title: string;
+  search?: boolean;
 }
 
 export interface IProps extends SelectProps<OptionTypeBase> {

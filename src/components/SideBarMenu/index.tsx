@@ -3,6 +3,7 @@ import { FiMenu, FiHelpCircle } from 'react-icons/fi';
 import { MdFavoriteBorder } from 'react-icons/md';
 import { AiOutlineShoppingCart, AiOutlineHome } from 'react-icons/ai';
 import { BsPerson } from 'react-icons/bs';
+import { FiSearch } from 'react-icons/fi';
 import { useSpring } from 'react-spring';
 
 import { IControl, IMenuItem } from '../../models/global';
@@ -24,6 +25,11 @@ const items = [
     icon: AiOutlineHome,
     title: 'Página Principal',
     url: '/',
+  },
+  {
+    icon: FiSearch,
+    title: 'Pesquisar',
+    url: '/pesquisar',
   },
   {
     icon: BsPerson,

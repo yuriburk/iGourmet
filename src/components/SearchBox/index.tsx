@@ -72,10 +72,6 @@ const SearchBox: React.FC<any> = ({
     [onItemClick],
   );
 
-  const filterPerContains = (value: any) => {
-    value.value.includes(inputRef.current.value);
-  };
-
   return (
     <Container>
       <Card>
@@ -95,7 +91,7 @@ const SearchBox: React.FC<any> = ({
       </Card>
       {items?.length > 0 && inputRef.current?.value.length > 0 && (
         <ItemsContainer>
-          {items.filter(filterPerContains).map((item : any, index : any) => (
+          {items.map((item : any, index : any) => (
             <Item
               key={index}
               onClick={() => handleOnItemClick(item.value)}

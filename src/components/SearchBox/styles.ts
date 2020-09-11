@@ -3,6 +3,10 @@ import { FiSearch } from 'react-icons/fi';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import ReactLoading from 'react-loading';
 
+export const Container = styled.div`
+  position: relative;
+`;
+
 export const CardComponent = styled.div`
   display: flex;
   justify-content: space-between;
@@ -14,10 +18,6 @@ export const CardComponent = styled.div`
   border-radius: 4px;
   border-color: ${props => props.theme.colors.primaryWhite};
   box-shadow: 0px 1px 4px 0px rgba(240, 242, 245, 1);
-`;
-
-export const Container = styled.div`
-  position: relative;
 `;
 
 export const Card = styled(CardComponent)`

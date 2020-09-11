@@ -4,8 +4,10 @@ import SearchBox from '../SearchBox';
 import { IHeaderProps } from '../../models/global';
 import { Container, Content, SearchBoxContainer } from './styles';
 import Categories from '../../api/categories';
+import { screenSize } from '../../styles/breakpoints';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 
-const Header: React.FC<IHeaderProps> = ({ leftComponent, title }) => {
+const Header: React.FC<IHeaderProps> = ({ leftComponent, title, search = true }) => {
   const [categoriaPesquisa, setCategoriaPesquisa] = useState([] as any);
 
   const handleSearchBoxChange = () => {
@@ -24,13 +26,15 @@ const Header: React.FC<IHeaderProps> = ({ leftComponent, title }) => {
       <Content>
         {leftComponent}
         <h1>{title}</h1>
-        <SearchBoxContainer>
+        {useWindowDimensions().width > screenSize.md && 
+        (<SearchBoxContainer>
           <SearchBox
             items={categoriaPesquisa}
             onChange={handleSearchBoxChange}
             onItemClick={console.log('oi')}
           />
-        </SearchBoxContainer>
+        </SearchBoxContainer>)
+        }
       </Content>
     </Container>
   );
