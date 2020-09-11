@@ -29,6 +29,22 @@ export const Content = styled.div`
   }
 `;
 
+export const LeftComponent = styled.div`
+  width: 30px;
+  height: 30px;
+`;
+
+export const TitleContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+`
+
+export const Title = styled.h1`
+`
+
 export const SearchBoxContainer = styled.div`
   width: 50%;
 `;

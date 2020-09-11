@@ -20,6 +20,7 @@ const Restaurant: React.FC<IAny> = params => {
           <FiMenu onClick={() => setIsMenuEnabled(state => !state)} />
         }
         title="iGourmet"
+        search={true}
       />
       <Restaurants
         filter={filter}

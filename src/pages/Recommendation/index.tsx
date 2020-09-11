@@ -6,7 +6,7 @@ import SideBarMenu from 'components/SideBarMenu';
 import Filter from 'components/Filter';
 import { Container } from './styles';
 
-const Recommendation: React.FC = () => {
+const Search: React.FC = () => {
   const [isMenuEnabled, setIsMenuEnabled] = useState(false);
 
   return (
@@ -16,6 +16,7 @@ const Recommendation: React.FC = () => {
           <FiMenu onClick={() => setIsMenuEnabled(state => !state)} />
         }
         title="iGourmet"
+        search={true}
       />
       <Filter />
       <SideBarMenu
@@ -26,4 +27,4 @@ const Recommendation: React.FC = () => {
   );
 };
 
-export default Recommendation;
+export default Search;

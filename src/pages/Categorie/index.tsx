@@ -17,6 +17,7 @@ const Categorie: React.FC = () => {
           <FiMenu onClick={() => setIsMenuEnabled(state => !state)} />
         }
         title="iGourmet"
+        search={true}
       />
       <List categories={categories} title={'Categorias'} />
       <SideBarMenu

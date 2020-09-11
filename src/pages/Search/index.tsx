@@ -5,7 +5,7 @@ import Header from 'components/Header';
 import SideBarMenu from 'components/SideBarMenu';
 import SearchBox from '../../components/SearchBox';
 import Categories from '../../api/categories';
-import { Container } from './styles';
+import { Container, SearchBoxContainer } from './styles';
 
 const Recommendation: React.FC = () => {
   const [isMenuEnabled, setIsMenuEnabled] = useState(false);
@@ -30,12 +30,15 @@ const Recommendation: React.FC = () => {
         }
         title="iGourmet"
       />
+      <SearchBoxContainer>
       <SearchBox
         items={categoriaPesquisa}
         onChange={handleSearchBoxChange}
         onItemClick={console.log('oi')}
+        search={false}
       />
-      <SideBarMenu
+      </SearchBoxContainer>
+      <SideBarMenu 
         isEnabled={isMenuEnabled}
         handleSetIsEnabled={setIsMenuEnabled}
       />

@@ -6,6 +6,7 @@ import React, {
   useState,
 } from 'react';
 import debounce from 'lodash.debounce';
+import { useHistory } from "react-router-dom";
 
 import Highlighter from '../Highlighter';
 import {
@@ -30,6 +31,12 @@ const SearchBox: React.FC<any> = ({
   const isMounted = useRef(true);
   const [isLoading, setIsLoading] = useState(false);
   const [searchWords, setSearchWords] = useState([]);
+
+  let history = useHistory();
+
+  function handleClick(location: any) {
+    history.push(`/restaurantes?categories=${location}`);
+  }
 
   const debouncedChange = useMemo(
     () =>
@@ -94,7 +101,7 @@ const SearchBox: React.FC<any> = ({
           {items.map((item : any, index : any) => (
             <Item
               key={index}
-              onClick={() => handleOnItemClick(item.value)}
+              onClick={() => handleClick(item.value.id)}
               data-testid="SearchBox-Item"
             >
               <Highlighter searchWords={searchWords} text={item.label} />
