@@ -1,0 +1,49 @@
+import React, { useState } from 'react';
+import { FiMenu } from 'react-icons/fi';
+
+import Header from '../../components/Header';
+import SideBarMenu from '../../components/SideBarMenu';
+import SearchBox from '../../components/SearchBox';
+import Categories from '../../api/categories';
+import { Container, SearchBoxContainer } from './styles';
+
+const Search = () => {
+  const [isMenuEnabled, setIsMenuEnabled] = useState(false);
+  const [categoriaPesquisa, setCategoriaPesquisa] = useState([]);
+
+  const handleSearchBoxChange = () => {
+    setCategoriaPesquisa(
+      Categories.map(categories => {
+        return {
+          label: `${categories.name} - Categoria`,
+          value: categories,
+        };
+      }),
+    );
+  };
+
+  return (
+    <Container>
+      <Header
+        leftComponent={
+          <FiMenu onClick={() => setIsMenuEnabled(state => !state)} />
+        }
+        title="iGourmet"
+      />
+      <SearchBoxContainer>
+      <SearchBox
+        items={categoriaPesquisa}
+        onChange={handleSearchBoxChange}
+        onItemClick={console.log('oi')}
+        search={false}
+      />
+      </SearchBoxContainer>
+      <SideBarMenu 
+        isEnabled={isMenuEnabled}
+        handleSetIsEnabled={setIsMenuEnabled}
+      />
+    </Container>
+  );
+};
+
+export default Search;
