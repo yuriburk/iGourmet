@@ -15,9 +15,9 @@ import {
   TextWrapper,
 } from './styles';
 
-const Card = ({ id, img, name }) => {
+const PresentationCard = ({ img, name }) => {
   return (
-    <Container href={`/restaurante?restaurant=${id}`}>
+    <Container href={`/restaurante`}>
       <RestaurantItem>
         <RestaurantImage src={img} alt={name} />
         <RestaurantSpec>
@@ -37,4 +37,4 @@ const Card = ({ id, img, name }) => {
   );
 };
 
-export default Card;
+export default PresentationCard;

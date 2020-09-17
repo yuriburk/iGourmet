@@ -9,6 +9,7 @@ const Categorie = lazy(() => import('../pages/Categorie'));
 const Restaurant = lazy(() => import('../pages/Restaurant'));
 const Search = lazy(() => import('../pages/Search'));
 const Profile = lazy(() => import('../pages/Profile'));
+const RestaurantSelected = lazy(() => import('../pages/RestaurantSelected'));
 
 const Loading = (
   <div>
@@ -25,6 +26,7 @@ const Routes = () => (
       <Route exact path="/restaurantes" component={Restaurant} />
       <Route exact path="/pesquisar" component={Search} />
       <Route exact path="/perfil" component={Profile} />
+      <Route exact path="/restaurante" component={RestaurantSelected} />
     </Switch>
   </Suspense>
 );

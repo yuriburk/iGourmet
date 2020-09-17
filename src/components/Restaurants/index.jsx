@@ -21,7 +21,7 @@ const Restaurants = ({
       {restaurants &&
         restaurants.map((Restaurant, index) => (
           <ItemsContainer key={index}>
-            <Card name={Restaurant.name} img={Restaurant.img} />
+            <Card id={Restaurant.id} name={Restaurant.name} img={Restaurant.img} />
           </ItemsContainer>
         ))}
       {restaurants.length === 0 && <NoData>Sem Registros :(</NoData>}

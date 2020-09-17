@@ -13,7 +13,7 @@ const Header = ({ leftComponent, title, search }) => {
     setCategoriaPesquisa(
       Categories.map(categories => {
         return {
-          label: `${categories.name} - Categoria`,
+          label: `${categories.name}`,
           value: categories,
         };
       }),
