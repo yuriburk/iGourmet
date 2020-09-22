@@ -2,13 +2,13 @@ import React from 'react';
 
 import { Container, Title, MoreContainer, Icon } from './styles';
 
-const Presentation = ({ title, link }) => {
+const Presentation = ({ title, link, isColor = false }) => {
   return (
     <Container>
-      {!link && <Title>{title}</Title>}
+      {!link && <Title titleColor={isColor}>{title}</Title>}
       {link && (
         <MoreContainer href={link}>
-          <Title>{title}</Title>
+          <Title titleColor={isColor}>{title}</Title>
           <Icon />
         </MoreContainer>
       )}
